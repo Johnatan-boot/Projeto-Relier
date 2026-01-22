@@ -1,0 +1,157 @@
+@use 'variables' as *;
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.footer {
+  background: linear-gradient(180deg, #0f172a, #020617);
+  color: #e5e7eb;
+  padding: 4rem 0 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* GRID */
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 3rem;
+}
+
+/* BRAND */
+.footer__brand {
+  max-width: 360px;
+
+  p {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: #cbd5f5;
+    line-height: 1.6;
+  }
+}
+
+.footer__logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: #fff;
+}
+
+/* LINKS */
+.footer__links,
+.footer__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+
+  h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: #fff;
+  }
+
+  a,
+  span {
+    font-size: 0.95rem;
+    color: #cbd5f5;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  a:hover {
+    color: $color-secondary;
+    transform: translateX(4px);
+  }
+}
+
+/* SOCIAL */
+.footer__social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+
+  a {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.85rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+
+  a:hover {
+    background: $color-secondary;
+    transform: translateY(-4px);
+  }
+}
+
+/* BOTTOM */
+.footer__bottom {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+
+  p {
+    font-size: 0.85rem;
+    color: #94a3b8;
+  }
+}
+
+/* ANIMAÇÃO */
+.footer.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.footer.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* =========================
+   RESPONSIVO
+   ========================= */
+
+@media (max-width: 900px) {
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer {
+    text-align: center;
+  }
+
+  .footer__social {
+    justify-content: center;
+  }
+}
+
+
+.footer__social a svg {
+  width: 18px;
+  height: 18px;
+  stroke: #fff;
+  stroke-width: 2;
+  fill: none;
+  transition: stroke 0.3s ease, transform 0.3s ease;
+}
+
+.footer__social a:hover svg {
+  stroke: #fff;
+  transform: scale(1.15);
+}
