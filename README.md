@@ -144,4 +144,50 @@ Cada aplicação:
 - Possui seu próprio build
 - Comunica-se com o Shell via Custom Events
 
+- Shell (Vanilla JS + Web Components)
+│
+├── Microfrontend React (Serviços)
+├── Microfrontend Angular (Dashboard)
+└── Microfrontend futuros
+
+
+---
+
+## 🚀 Por que Web Components?
+
+- Framework agnostic
+- Alto isolamento
+- Ideal para microfrontends
+- Evita lock-in tecnológico
+
+---
+
+## 🛠️ Tecnologias
+
+- HTML5
+- SCSS
+- JavaScript (ES6+)
+- Web Components
+- Vite / Build manual
+- Deploy no Render
+
+---
+
+## 📌 Status do Projeto
+
+- [x] Shell estruturado
+- [x] Componentização via Web Components
+- [ ] Microfrontend React
+- [ ] Microfrontend Angular
+- [ ] Comunicação entre microfrontends
+
+---
+
+## 🧠 Próximos passos
+
+- Criar microfrontend React para serviços
+- Criar microfrontend Angular para dashboard
+- Implementar comunicação entre apps
+
+
 
