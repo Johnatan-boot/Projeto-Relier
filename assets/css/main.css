@@ -172,9 +172,10 @@ section {
 .navbar .header {
   z-index: 1000;
 }
-.navbar body.menu-open {
+body.menu-open {
   overflow: hidden;
 }
+
 
 .navbar__logo {
   opacity: 0;
