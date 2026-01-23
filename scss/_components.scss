@@ -119,30 +119,21 @@
     border: none;
     cursor: pointer;
   }
-}
 
-@media (max-width: 768px) {
   .navbar__menu {
-    position: fixed;
-    top: 80px;
-    right: 0;
-    background: white;
-    flex-direction: column;
-    width: 260px;
-    height: calc(100vh - 80px);
-    padding: 2rem;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-  }
-
-  .navbar__menu.active {
-    transform: translateX(0);
-  }
-
-  .navbar__toggle {
-    display: block;
-  }
+  z-index: 999;
 }
+.header {
+  z-index: 1000;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+}
+
+
 
 
 
@@ -178,6 +169,103 @@
     text-shadow: 0 6px 18px rgba(0,0,0,0.15);
   }
 }
+
+.navbar__toggle {
+  font-size: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.navbar__toggle.open {
+  transform: rotate(90deg);
+}
+
+
+
+
+.navbar__toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.navbar__menu a:active {
+  color: $color-secondary;
+  transform: scale(0.98);
+}
+
+
+
+.navbar__toggle.open {
+  transform: rotate(90deg);
+  transition: transform 0.3s ease;
+}
+
+
+.navbar__toggle .icon {
+  position: absolute;
+  font-size: 2rem;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.icon-close {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.navbar__toggle.open .icon-menu {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.navbar__toggle.open .icon-close {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+.navbar__toggle .icon {
+  position: absolute;
+  font-size: 2rem;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.icon-close {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.navbar__toggle.open .icon-menu {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.navbar__toggle.open .icon-close {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+.navbar__menu a {
+  position: relative;
+  color: $color-primary;
+  transition: 
+    color 0.3s ease,
+    transform 0.25s ease;
+
+  &:hover {
+    color: $color-secondary;
+    transform: translateY(-2px);
+  }
+}
+
+
 
 
 /* =========================

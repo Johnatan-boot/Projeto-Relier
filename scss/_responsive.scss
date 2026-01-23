@@ -1,7 +1,29 @@
 @use 'variables' as *;
 
 /* =========================
-   RESPONSIVIDADE
+   TABLET / NOTEBOOK
+   ========================= */
+
+@media (max-width: 900px) {
+  .hero__wrapper {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero__carousel {
+    height: 280px;
+  }
+
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+/* =========================
+   MOBILE GRANDE
    ========================= */
 
 @media (max-width: 768px) {
@@ -10,42 +32,189 @@
   }
 }
 
+/* =========================
+   MOBILE PEQUENO
+   ========================= */
 
 
+ /*=========================
+ 
+ AJUSTE RESPONSIVIDADE PAGINA INTEIRA TODOS OS COMPONENTS
+ ===========================*/  
 @media (max-width: 600px) {
-  .contact__form {
-    padding: 1.5rem;
+
+  
+  .navbar {
+    padding-inline: 1rem;
   }
+
+  .navbar__toggle {
+    display: flex;
+    z-index: 1001;
+  }
+
+  .navbar__menu {
+    position: fixed;
+    top: 80px;              // altura do header
+    left: 0;
+    right: 0;
+    height: calc(100vh - 80px); // 🔥 OCUPA A TELA TODA
+
+    background: $color-light;   // 👈 cor oficial do navbar
+    backdrop-filter: blur(14px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;    // 🔥 centraliza verticalmente
+
+    gap: 2rem;
+    padding: 3rem 1.5rem;
+
+    font-size: 1.2rem;
+    font-weight: 500;
+
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+
+    transition: transform 0.35s ease, opacity 0.3s ease;
+
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    z-index: 999;
+  }
+
+  .navbar__menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .navbar__menu a {
+    font-size: 1.3rem;     // 🔥 link mais “clicável”
+    padding: 0.8rem 0;
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  
 }
 
 
-@media (max-width: 900px) {
+/*=========================
+AJUSTE NO COMPONENT HERO
+============================*/
+
+@media (max-width: 768px) {
+
+  /* HERO LAYOUT */
   .hero__wrapper {
     grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2.5rem;
   }
 
-  .hero__carousel {
-    height: 280px;
+  /* TEXTO */
+  .hero__content {
+    max-width: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center; // 🔥 centraliza tudo
   }
 
   .hero__content h2 {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
+  }
+
+  .hero__content p {
+    max-width: 480px;
+  }
+
+  /* BOTÃO */
+  .hero__content .btn {
+    margin-inline: auto; // 🔥 garante centralização
+  }
+
+  /* CARROSSEL */
+  .hero__carousel {
+    height: 300px;
   }
 }
 
 
-@media (max-width: 600px) {
-  .carousel__btn {
-    width: 36px;
-    height: 36px;
-    font-size: 1.3rem;
+
+/*
+=================== 320px*/
+
+
+@media (max-width: 320px) {
+
+  /* CONTAINER */
+  .about {
+    padding: 3.5rem 0;
   }
-}
 
-
-@media (max-width: 900px) {
-  .services__grid {
+  .about__wrapper {
     grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  /* TEXTO */
+  .about__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about__content h3 {
+    font-size: 1.8rem;
+  }
+
+  .about__content p {
+    max-width: 100%;
+    font-size: 0.95rem;
+  }
+
+  /* IMAGEM */
+  .about__image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .about__image img {
+    width: 90%;          // 🔥 controla largura
+    max-width: 260px;    // 🔥 evita imagem gigante
+    border-radius: 16px;
+  }
+
+  /* CARDS */
+  .about__cards {
+    grid-template-columns: 1fr; // 🔥 UMA COLUNA
+    gap: 1.2rem;
+    width: 100%;
+  }
+
+  .info-card {
+    padding: 1.4rem 1rem;
+  }
+
+  .info-card strong {
+    font-size: 1.4rem;
+  }
+
+  .info-card small {
+    font-size: 0.8rem;
   }
 }
+
+/*===================
+*/
+
+
 

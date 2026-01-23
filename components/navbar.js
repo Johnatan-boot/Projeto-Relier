@@ -7,7 +7,8 @@ class NavbarComponent extends HTMLElement {
             <div class="navbar__logo">Relier</div>
 
             <button class="navbar__toggle" aria-label="Abrir menu">
-              ☰
+              <span class="icon icon-menu">☰</span>
+              <span class="icon icon-close">✕</span>
             </button>
 
             <ul class="navbar__menu">
@@ -25,33 +26,30 @@ class NavbarComponent extends HTMLElement {
     this.handleScroll();
   }
 
-  // MENU MOBILE
   initMenu() {
     const toggle = this.querySelector('.navbar__toggle');
     const menu = this.querySelector('.navbar__menu');
 
     toggle.addEventListener('click', () => {
-      menu.classList.toggle('active');
+      const isOpen = menu.classList.toggle('active');
+      toggle.classList.toggle('open', isOpen);
+      document.body.classList.toggle('menu-open', isOpen);
     });
 
-    // Fecha menu ao clicar em link
-    this.querySelectorAll('a').forEach(link => {
+    this.querySelectorAll('.navbar__menu a').forEach(link => {
       link.addEventListener('click', () => {
         menu.classList.remove('active');
+        toggle.classList.remove('open');
+        document.body.classList.remove('menu-open');
       });
     });
   }
 
-  // EFEITO AO ROLAR A PÁGINA
   handleScroll() {
     const header = this.querySelector('.header');
 
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 20) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
+      header.classList.toggle('scrolled', window.scrollY > 20);
     });
   }
 }
