@@ -74,3 +74,27 @@ manuteníveis e escaláveis, simulando um projeto real de agência.
 
 ## 🛠 Tecnologias
 HTML | SCSS | JavaScript | Web Components
+
+
+# Relier — Microfrontend Shell
+
+Este projeto representa o **Shell da arquitetura de Microfrontends da Relier**.
+
+O Shell é responsável por:
+- Layout global (Navbar, Footer, Hero)
+- Identidade visual e Design System
+- Orquestração de Microfrontends
+- Carregamento de aplicações isoladas (React, Angular, etc)
+
+---
+
+## 🧩 Arquitetura
+
+Este projeto utiliza **Web Components nativos** como contrato entre microfrontends.
+
+Cada aplicação:
+- É independente
+- Possui seu próprio build
+- Comunica-se com o Shell via Custom Events
+
+
