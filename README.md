@@ -48,6 +48,7 @@
 <img width="1366" height="768" alt="Captura de tela 2026-01-23 143658" src="https://github.com/user-attachments/assets/69daab6b-f7f6-41eb-8f2c-457719c0138b" />
 <img width="1366" height="768" alt="Captura de tela 2026-01-23 143644" src="https://github.com/user-attachments/assets/469bd243-ebdd-404d-9a86-9548fa54e3ed" />
 <img width="1366" height="768" alt="Captura de tela 2026-01-23 143615" src="https://github.com/user-attachments/assets/6f153710-22ee-4f2a-ab70-e9b085ac6050" />
+<img width="1366" height="768" alt="Captura de tela 2026-01-25 170903" src="https://github.com/user-attachments/assets/83ac7895-68ca-4ce0-a84c-6789deb87fcf" />
 
 Projeto institucional desenvolvido como estudo prático de Frontend,
 com foco em arquitetura, componentização e boas práticas.
