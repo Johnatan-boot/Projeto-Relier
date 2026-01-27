@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Relier Micro-Frontend Shell</title>
+  </head>
+
+  <body>
+    <h1>Relier • Microfrontend Shell</h1>
+
+    <nav class="tabs">
+      <button data-mf="playground">Playground</button>
+      <button data-mf="stats">Stats</button>
+    </nav>
+
+    <section id="mf-container"></section>
+
+    <section id="microfrontend-react">
+      <react-microfrontend message="Olá do Shell 🚀"></react-microfrontend>
+    </section>
+
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/microfrontends/playground/playground.js"></script>
+    <script type="module" src="/src/microfrontends/stats/stats.js"></script>
+<script type="module" src="/src/microfrontend-react/src/main.jsx"></script>
+  </body>
+</html>
